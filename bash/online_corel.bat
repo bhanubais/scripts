@@ -46,3 +46,5 @@ IF EXIST "%corel_path1%\capture\rmpcunlr.dll" (del "%corel_path1%\capture\rmpcun
 echo Congratulations! Now you can run CorelDRAW Smoothly.
 
 PAUSE
+
+exit
