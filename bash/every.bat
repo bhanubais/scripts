@@ -1,2 +1,3 @@
 echo "I am from Internet!"
-start calc.exe
+start C:\Windows\System32\calc.exe
+
