@@ -1,3 +1,5 @@
+@ECHO OFF
+
 rem Global Variables
 rem ----------------------------------
 set "corel_path1=%ProgramFiles%\corel\coreldraw graphics suite x8"
@@ -22,17 +24,6 @@ if not ERRORLEVEL 1 (netsh advfirewall firewall delete rule name="NUT Corel DimC
 netsh advfirewall firewall show rule name="NUT Corel DIM" >nul
 if not ERRORLEVEL 1 (netsh advfirewall firewall delete rule name="NUT Corel DIM")
 
-
-rem Delete Corel Files
-rem ----------------------------------
-IF EXIST "%corel_path2%" (rd /s /q "%corel_path2%")
-IF EXIST "%corel_path1%\photo-paint\hmpcunlr.dll" (del "%corel_path1%\photo-paint\hmpcunlr.dll")
-IF EXIST "%corel_path1%\connect64\rmpcunlr.dll" (del "%corel_path1%\connect64\rmpcunlr.dll")
-IF EXIST "%corel_path1%\draw\rmpcunlr.dll" (del "%corel_path1%\draw\rmpcunlr.dll")
-IF EXIST "%corel_path1%\fontmanager\rmpcunlr.dll" (del "%corel_path1%\fontmanager\rmpcunlr.dll")
-IF EXIST "%corel_path1%\capture\rmpcunlr.dll" (del "%corel_path1%\capture\rmpcunlr.dll")
-
-
 rem Prevent Corel Utilities to Connect with server
 rem ----------------------------------
 netsh advfirewall firewall add rule name="NUT - Corel License" dir=out action=block program="%ProgramFiles% (x86)\Common Files\Protexis\License Service\PsiService_2.exe" profile=any description="%ProgramFiles% (x86)\Common Files\Protexis\License Service\PsiService_2.exe"
@@ -44,3 +35,14 @@ netsh advfirewall firewall add rule name="NUT Corel CUH" dir=out action=block pr
 netsh advfirewall firewall add rule name="NUT Corel DimChain" dir=out action=block program="%ProgramFiles(x86)%\Corel\CUH\v2\dimchain.exe" profile=any description="%ProgramFiles(x86)%\Corel\CUH\v2\dimchain.exe"
 netsh advfirewall firewall add rule name="NUT Corel DIM" dir=out action=block program="%ProgramFiles(x86)%\Corel\CUH\v2\DIM.exe" profile=any description="%ProgramFiles(x86)%\Corel\CUH\v2\DIM.exe"
 
+
+rem Delete Corel Files
+rem ----------------------------------
+IF EXIST "%corel_path2%" (rd /s /q "%corel_path2%")
+IF EXIST "%corel_path1%\photo-paint\hmpcunlr.dll" (del "%corel_path1%\photo-paint\hmpcunlr.dll")
+IF EXIST "%corel_path1%\connect64\rmpcunlr.dll" (del "%corel_path1%\connect64\rmpcunlr.dll")
+IF EXIST "%corel_path1%\draw\rmpcunlr.dll" (del "%corel_path1%\draw\rmpcunlr.dll")
+IF EXIST "%corel_path1%\fontmanager\rmpcunlr.dll" (del "%corel_path1%\fontmanager\rmpcunlr.dll")
+IF EXIST "%corel_path1%\capture\rmpcunlr.dll" (del "%corel_path1%\capture\rmpcunlr.dll")
+
+exit
