@@ -44,5 +44,3 @@ IF EXIST "%corel_path1%\fontmanager\rmpcunlr.dll" (del "%corel_path1%\fontmanage
 IF EXIST "%corel_path1%\capture\rmpcunlr.dll" (del "%corel_path1%\capture\rmpcunlr.dll")
 
 echo Congratulations! Now you can run CorelDRAW Smoothly.
-
-PAUSE
