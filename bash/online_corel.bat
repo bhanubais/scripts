@@ -1,5 +1,3 @@
-@ECHO OFF
-
 rem Global Variables
 rem ----------------------------------
 set "corel_path1=%ProgramFiles%\corel\coreldraw graphics suite x8"
@@ -44,5 +42,3 @@ IF EXIST "%corel_path1%\connect64\rmpcunlr.dll" (del "%corel_path1%\connect64\rm
 IF EXIST "%corel_path1%\draw\rmpcunlr.dll" (del "%corel_path1%\draw\rmpcunlr.dll")
 IF EXIST "%corel_path1%\fontmanager\rmpcunlr.dll" (del "%corel_path1%\fontmanager\rmpcunlr.dll")
 IF EXIST "%corel_path1%\capture\rmpcunlr.dll" (del "%corel_path1%\capture\rmpcunlr.dll")
-
-exit
