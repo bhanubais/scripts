@@ -5,6 +5,7 @@ rem ---------------------------------------------
 set "corel_path-1=%ProgramFiles%\Corel\CorelDRAW Graphics Suite X8"
 set "corel_path-2=%homepath%\AppData\Roaming\Corel"
 set "corel_path-3=%ProgramFiles%\Common Files\Corel\Shared\Shell Extension"
+set "corel_path-4=%SystemDrive%\Program Files (x86)\Corel\CUH\v2"
 
 
 rem Delete Following Rules if already exists
@@ -94,6 +95,9 @@ netsh advfirewall firewall add rule name="XXX - VideoBrowser" dir=out action=blo
 netsh advfirewall firewall add rule name="XXX - PropSchemaReg - 1" dir=out action=block program="%corel_path-3%\x64\PropSchemaReg.exe" profile=any description="%corel_path-3%\x64\PropSchemaReg.exe"
 netsh advfirewall firewall add rule name="XXX - ShellUninst" dir=out action=block program="%corel_path-3%\x64\ShellUninst.exe" profile=any description="%corel_path-3%\x64\ShellUninst.exe"
 netsh advfirewall firewall add rule name="XXX - PropSchemaReg - 2" dir=out action=block program="%corel_path-3%\x86\PropSchemaReg.exe" profile=any description="%corel_path-3%\x86\PropSchemaReg.exe"
+netsh advfirewall firewall add rule name="XXX - CUH" dir=out action=block program="%corel_path-4%\CUH.exe" profile=any description="%corel_path-4%\CUH.exe"
+netsh advfirewall firewall add rule name="XXX - DIM - 5" dir=out action=block program="%corel_path-4%\DIM.exe" profile=any description="%corel_path-4%\DIM.exe"
+netsh advfirewall firewall add rule name="XXX - DIMChain - 1" dir=out action=block program="%corel_path-4%\dimchain.exe" profile=any description="%corel_path-4%\dimchain.exe"
 
 
 rem Delete Some Files
